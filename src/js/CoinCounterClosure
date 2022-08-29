@@ -1,0 +1,20 @@
+let price = 4.99;
+const coinCounter = (coin) => {
+  return function (price) {
+    const n = price * 100;
+    const checkRem = n % coin; //0
+    const newSub = n - checkRem; //499
+    const checkCount = newSub / coin; // 499 / 1 = 499 
+    return checkCount;
+  } 
+}
+
+const quarter = coinCounter(25); 
+const dime = coinCounter(10); 
+const nickle = coinCounter(5);  
+const penny = coinCounter(1);  
+
+console.log(quarter(price));
+console.log(dime(price));
+console.log(nickle(price));
+console.log(penny(price));
